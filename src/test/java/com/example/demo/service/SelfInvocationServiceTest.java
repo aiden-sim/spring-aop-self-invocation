@@ -10,6 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@DisplayName("SelfInvocation 테스트")
 class SelfInvocationServiceTest {
 
     @Nested
