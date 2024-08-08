@@ -11,7 +11,7 @@ public class SelfInvocationOuterService {
     @Transactional
     public void callee() {
         try {
-            log.info("callee transaction Status :" + TransactionAspectSupport.currentTransactionStatus());
+            log.info("callee transaction Status : {}", TransactionAspectSupport.currentTransactionStatus());
         } catch (RuntimeException e) {
             log.error("Transaction 생성 실패..");
         }

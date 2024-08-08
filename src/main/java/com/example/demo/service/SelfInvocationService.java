@@ -43,6 +43,7 @@ public class SelfInvocationService {
 
     public void callerOuterService() {
         log.info("callerOuterService");
+        log.info("SelfInvocationOuterService Class : {}", selfInvocationOuterService.getClass());
         selfInvocationOuterService.callee();
     }
 
@@ -50,7 +51,7 @@ public class SelfInvocationService {
     public void callee() {
         log.info("callee");
         try {
-            log.info("callee transaction Status :" + TransactionAspectSupport.currentTransactionStatus());
+            log.info("callee transaction Status : {}", TransactionAspectSupport.currentTransactionStatus());
         } catch (RuntimeException e) {
             log.error("Transaction 생성 실패..");
         }

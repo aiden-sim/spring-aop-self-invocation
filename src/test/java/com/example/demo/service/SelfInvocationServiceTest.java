@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@Slf4j
 @DisplayName("SelfInvocation 테스트")
 class SelfInvocationServiceTest {
 
@@ -23,7 +25,7 @@ class SelfInvocationServiceTest {
 
         @Test
         void caller() {
-            System.out.println("SelfInvocationService Class : " + selfInvocationService.getClass());
+            log.info("SelfInvocationService Class : {}", selfInvocationService.getClass());
             selfInvocationService.caller();
         }
     }
@@ -38,7 +40,7 @@ class SelfInvocationServiceTest {
 
         @Test
         void caller() {
-            System.out.println("SelfInvocationService Class : " + selfInvocationService.getClass());
+            log.info("SelfInvocationService Class : {}", selfInvocationService.getClass());
             selfInvocationService.callerAspectJ();
         }
     }
@@ -54,7 +56,7 @@ class SelfInvocationServiceTest {
 
         @Test
         void caller() {
-            System.out.println("SelfInvocationService Class : " + selfInvocationService.getClass());
+            log.info("SelfInvocationService Class : {}", selfInvocationService.getClass());
             selfInvocationService.callerAopContext();
         }
     }
@@ -70,7 +72,7 @@ class SelfInvocationServiceTest {
 
         @Test
         void caller() {
-            System.out.println("SelfInvocationService Class : " + selfInvocationService.getClass());
+            log.info("SelfInvocationService Class : {}", selfInvocationService.getClass());
             selfInvocationService.callerSelfDI();
         }
     }
@@ -85,7 +87,7 @@ class SelfInvocationServiceTest {
 
         @Test
         void caller() {
-            System.out.println("SelfInvocationService Class : " + selfInvocationService.getClass());
+            log.info("SelfInvocationService Class : {}", selfInvocationService.getClass());
             selfInvocationService.callerOuterService();
         }
     }
